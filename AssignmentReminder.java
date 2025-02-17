@@ -11,7 +11,7 @@ import javax.swing.*;
 
 public class AssignmentReminder {
     private JFrame frame;
-    private JTextField assignmentField, dateField;
+    private JTextField assignmentField, dateField, elevtidField;
     private JButton submitButton;
     private Map<String, LocalDate> assignments = new HashMap<>();
     private Timer timer = new Timer();
@@ -33,7 +33,7 @@ public class AssignmentReminder {
        
         frame.add(new JLabel("Elevtid:"));
         elevtidField = new JTextField();
-        frame.add(dateField);
+        frame.add(elevtidField);
 
         submitButton = new JButton("Add Assignment");
         frame.add(submitButton);
@@ -53,10 +53,11 @@ public class AssignmentReminder {
     private void addAssignment() {
         String assignment = assignmentField.getText();
         String dateText = dateField.getText();
+        String elevtid = elevtidField.getText();
 
         try {
             LocalDate dueDate = LocalDate.parse(dateText, DateTimeFormatter.ISO_LOCAL_DATE);
-            assignments.put(assignment, dueDate);
+            assignments.put(assignment, dueDate, elevtid);
             JOptionPane.showMessageDialog(frame, "Assignment added successfully!");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(frame, "Invalid date format! Use YYYY-MM-DD.");

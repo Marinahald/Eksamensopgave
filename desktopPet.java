@@ -1,11 +1,15 @@
 import javax.swing.*;
-import java.awt.*;
+//import java.awt.*;
 
-static JFrame f;
+
 
 public class desktopPet{
+    private JFrame f;
 
-    f = new JFrame();
-
-
+    public desktopPet() {
+    
+        f = new JFrame();
+       // f.isUndecorated();
+       f.setSize(20, 30);
+    }
 }

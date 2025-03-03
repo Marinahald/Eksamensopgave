@@ -1,6 +1,7 @@
 public class Main{
 public static void main(String[] args) {    
-        desktopPet dP = new desktopPet();
+        desktopPet frame = new desktopPet();
+        frame.setVisible(true);
         AssignmentReminder ar = new AssignmentReminder();
         
 }}

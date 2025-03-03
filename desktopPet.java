@@ -20,6 +20,7 @@ public class desktopPet extends JFrame{
 		setBackground(new Color(0,0,0,0));
 
         pet = new BackgroundPanel(new ImageIcon("tempcat.png"));
+        pet.setBackground(new Color(0,0,0,0));
 
         setSize(260, 260);
 		setLocation(650, 350);

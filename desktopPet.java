@@ -8,29 +8,34 @@ public class desktopPet extends JFrame{
    // private JFrame f;
    
     Container c;
-    BackgroundPanel pet;
+    BackgroundPanel back;
+    
 
     public desktopPet() {
         c = getContentPane();
         setUndecorated(true);
 		setBackground(new Color(0,0,0,0));
 
-        pet = new BackgroundPanel(new ImageIcon("tempcat.png"));
+        back = new BackgroundPanel(new ImageIcon("tempcat.png"));
+        back.setBackground(new Color(0,0,0,0));
 
         setSize(260, 260);
 		setLocation(650, 350);
-        /* 
-        f = new JFrame();
-        f.isUndecorated();
-       f.setSize(200, 300);
-       f.setVisible(true);
-       f.setBackground(null);
-       */
-      c.add(pet);
+       
+      c.add(back);
       
     }
 
-    class BackgroundPanel extends JPanel{
+    public void setIcon(ImageIcon imageIcon) {
+        System.out.println("setIcon called with: " + imageIcon);
+        back.setIcon(imageIcon);
+        
+        
+    }
+
+   
+
+    public class BackgroundPanel extends JPanel{
 		ImageIcon icon;
 		
 		public BackgroundPanel(ImageIcon icon) {
@@ -39,12 +44,18 @@ public class desktopPet extends JFrame{
 
 		public void setIcon(ImageIcon icon) {
 			this.icon = icon;
+            System.out.println("setIcon called with: " + icon + "v2");
+            
+            repaint();
+           
 		}
-
+        @Override
 		protected void paintComponent(Graphics g) {
 			super.paintComponent(g);
+            g.setColor(new Color(0, 0, 0, 0));
+            g.fillRect(0, 0, 260, 260);
 			if (this.icon != null) {
-				g.drawImage(icon.getImage(),0,0,this);
+				g.drawImage(icon.getImage(),0,0, getWidth(), getHeight(),this);
 			}
 			
 			
@@ -52,4 +63,6 @@ public class desktopPet extends JFrame{
 		
 		
 	}
+
+
 }

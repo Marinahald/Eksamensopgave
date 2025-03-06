@@ -1,5 +1,5 @@
 import javax.swing.ImageIcon;
-import javax.swing.SwingUtilities;
+import org.json.simple.JSONObject;
 
 public class Main{
 public static void main(String[] args) {    
@@ -12,6 +12,7 @@ public static void main(String[] args) {
                 pet.setIcon(new ImageIcon("angycat.png"));
             }
         }); */
+        JSONObject
         desktopPet pet = new desktopPet();
         pet.setVisible(true);
         AssignmentReminder ar = new AssignmentReminder();

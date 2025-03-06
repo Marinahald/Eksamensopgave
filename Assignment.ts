@@ -1,4 +1,4 @@
-const Data_FIlE = 'C:/Users/marin/OneDrive/Dokumenter/GitHub/Eksamensopgave/Assignment.ts';
+const Data_FIlE = '';
 
 interface User {
     id: number;
